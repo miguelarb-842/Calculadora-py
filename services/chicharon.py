@@ -1,15 +1,14 @@
 from util.utlidades import borrar_pantalla, Esperar_tecla;
-from util.validaciones import val_float
+import util.validacions as vl
 
 def chicharon() -> None:
     print("\nResolución de ecuación cuadrática: ax² + bx + c = 0\n")
     Esperar_tecla()
     borrar_pantalla()
 
-    a = val_float("Ingrese el valor de a: ", 1)
-
-    b = val_float("Ingrese el valor de b: ")
-    c = val_float("Ingrese el valor de c: ")
+    a = vl.val_float("Ingrese el valor de a: ", 1)
+    b = vl.val_float("Ingrese el valor de b: ")
+    c = vl.val_float("Ingrese el valor de c: ")
 
     discriminante = b**2 - 4 * a * c
 
