@@ -1,8 +1,7 @@
-from util.validaciones import (cantidadVali, val_float)
+import util.validacions as vl
 from util.utlidades import(borrar_pantalla,Esperar_tecla)
 
-
-def suma() -> float:
+def suma() -> None:
     while True:
         
         borrar_pantalla()
@@ -11,7 +10,7 @@ def suma() -> float:
             print("¿Cuántos números desea sumar?")
             cantidad = int(input("> "))
             
-            if not cantidadVali(cantidad): 
+            if not vl.cantidadVali(cantidad): 
                 break
             
         except ValueError:
@@ -22,6 +21,6 @@ def suma() -> float:
     total:float = 0
     
     for i in range(cantidad):
-        total += val_float(f"\nIngrese el número {i + 1} a sumar: ")
+        total += vl.val_float(f"\nIngrese el número {i + 1} a sumar: ")
 
-    return total 
+    print(f"La suma es: {total}")

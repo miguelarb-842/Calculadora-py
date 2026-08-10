@@ -1,13 +1,13 @@
 from util.utlidades import borrar_pantalla;
-from util.validaciones import val_float
+import util.validacions as vl
 
-def radic()->float:
+def radic()->None:
     borrar_pantalla
         
-    num1 = val_float("Ingres el radadicando: ", 0);
-    num2 = val_float("Ingrese el indice de raiz: ", 2);    
+    num1 = vl.val_float("Ingres el radadicando: ", 0);
+    num2 = vl.val_float("Ingrese el indice de raiz: ", 2);    
     
     raiz = 1 / num2
         
     total = num1 ** raiz
-    return total
+    print (f"El resultado es: {total}")
