@@ -1,6 +1,20 @@
 from util.utlidades import borrar_pantalla
 
 def val_float(mensaje: str = "> ", min:int = None, max:int = None) -> float:
+    """Solicita al usuario un numero decimal por teclado y lo valida.
+
+    Repite la solicitud hasta recibir un float valido, opcionalmente
+    dentro de un rango minimo y/o maximo.
+
+    Args:
+        mensaje: Texto que se muestra al solicitar el numero.
+        min: Valor minimo aceptado (inclusive). Si es None, no hay limite inferior.
+        max: Valor maximo aceptado (inclusive). Si es None, no hay limite superior.
+
+    Returns:
+        float: El numero decimal ingresado por el usuario que cumple
+        con las restricciones indicadas.
+    """
     num:float;
     while True:
         try:

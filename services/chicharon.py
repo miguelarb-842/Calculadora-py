@@ -2,6 +2,17 @@ from util.utlidades import borrar_pantalla, Esperar_tecla;
 import util.validacions as vl
 
 def chicharon() -> None:
+    """Resuelve una ecuacion cuadratica de la forma ax^2 + bx + c = 0.
+
+    Solicita al usuario los coeficientes a, b y c, calcula el
+    discriminante y determina el tipo de raices segun su signo:
+
+    - Discriminante > 0: dos raices reales distintas.
+    - Discriminante == 0: una raiz real doble.
+    - Discriminante < 0: dos raices complejas conjugadas.
+
+    El resultado se imprime directamente en pantalla.
+    """
     print("\nResolución de ecuación cuadrática: ax² + bx + c = 0\n")
     Esperar_tecla()
     borrar_pantalla()
