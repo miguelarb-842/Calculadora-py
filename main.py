@@ -1,29 +1,15 @@
 from util.utlidades import (borrar_pantalla,Esperar_tecla)
-from util.validaciones import(CONTINUAR,CONTINUAR_CHICHARONERA)
-from services.secciones import(menu)
+from util.validaciones import(continuar,continuar_chicharonera, valInt)
+import services as cal
 
-from calculations.operaciones import(
-    Suma,
-    resta,
-    multiplicacion,
-    divic,
-    poten,
-    radic,
-    Chicharon
-    )
 
 def main():
-       while True:
-        while True:
-            borrar_pantalla()
-            menu()
-            try:
-                opcion = int(input("Seleccione una opción: "))
-                break
-            except ValueError:
-                borrar_pantalla()
-                print("Error: ingrese un número válido.")
-                Esperar_tecla()
+    while True:
+        borrar_pantalla()
+        cal.menu();
+        opcion = valInt("Seleccione una opción: ", 0, 7);
+        
+       
                 
         borrar_pantalla()
         match opcion:
@@ -33,35 +19,39 @@ def main():
                 return
 
             case 1:
-                resultado = Suma()
-                if not CONTINUAR(resultado):
+                resultado = cal.suma()
+                if not continuar(resultado):
                     return
             
             case 2: 
-                resultado = resta()
-                if not CONTINUAR(resultado):
+                resultado = cal.resta()
+                if not continuar(resultado):
                     return
                 
             case 3:
-                resultado = multiplicacion()
-                if not CONTINUAR(resultado):
+                resultado = cal.multiplicacion()
+                if not continuar(resultado):
                     return
             case 4:
-                resultado = divic()
-                if not CONTINUAR(resultado):
+                resultado = cal.divic()
+                if not continuar(resultado):
                     return 
             case 5:
-                resultado = poten()
-                if not CONTINUAR(resultado):
+                resultado = cal.poten()
+                if not continuar(resultado):
                     return
             case 6:
-                resultado = radic()
-                if not CONTINUAR(resultado):
+                resultado = cal.radic()
+                if not continuar(resultado):
                     return
             case 7: 
-                Chicharon()
-                if not CONTINUAR_CHICHARONERA():
+                cal.chicharon()
+                if not continuar_chicharonera():
                     return
+            case _:
+                print("\n\tERROR: la opcion que ingreso no esta en el menu.\n");
+                Esperar_tecla();
+                borrar_pantalla();
                                     
 if __name__ == "__main__":
     main()
