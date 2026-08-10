@@ -1,8 +1,22 @@
+"""
+Calculadora basica hecha en Python con 7 funciones.
+Cada una sigue el funcionamiento matematico convencional.
+
+Autor: Miguel J. Gutierrez, Walter Jiron
+Repositorio: https://github.com/miguelarb-842/Calculadora-py
+
+"""
 from util.utlidades import (borrar_pantalla,Esperar_tecla)
 import util.validacions as vl
 import services as cal
 
 def main():
+    """Ejecuta el bucle principal de la calculadora.
+
+    Muestra el menu, captura la opcion del usuario y despacha
+    la operacion correspondiente hasta que se seleccione salir
+    o el usuario decida no continuar.
+    """
     while True:
         borrar_pantalla()
         cal.menu();

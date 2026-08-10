@@ -1,7 +1,15 @@
 from util.utlidades import (borrar_pantalla,Esperar_tecla)
 
 def cantidadVali(Valor:int)->bool:
+    """Valida si la cantidad es valida.
     
+    Args:
+        valor: se ingresa el valor a ser evaludado.
+
+    Returns:
+        True cuando se ingresa un valor invalido.
+        False cuando el valor que se ingresa es correcto.
+    """
     if Valor == 0:
         print("\nEste valor no puede ser 0")
         Esperar_tecla()

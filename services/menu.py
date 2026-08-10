@@ -1,4 +1,11 @@
 def menu():
+    """Muestra en pantalla el menu principal de la calculadora.
+
+    Presenta el titulo, las opciones disponibles (suma, resta,
+    multiplicacion, division, potencia, radicalizacion y resolucion
+    cuadratica) y la opcion para salir. No solicita entrada del
+    usuario ni retorna ningun valor.
+    """
     print("Calculadora".center(50))
     print("Seleccione la operacion que desea realizar: ")
     print("""

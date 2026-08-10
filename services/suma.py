@@ -2,6 +2,12 @@ import util.validacions as vl
 from util.utlidades import(borrar_pantalla,Esperar_tecla)
 
 def suma() -> None:
+    """Realiza la suma de una cantidad variable de numeros.
+
+    Solicita al usuario cuantos numeros desea sumar, valida esa
+    cantidad, y luego solicita cada numero individualmente para
+    calcular el total. El resultado se imprime en pantalla.
+    """
     while True:
         
         borrar_pantalla()
