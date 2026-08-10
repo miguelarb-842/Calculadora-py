@@ -1,13 +1,64 @@
 from .utlidades import(Esperar_tecla,borrar_pantalla)
 
-def Esnumero(mensaje: str = "> ") -> float:
+def val_float(mensaje: str = "> ", min:int = None, max:int = None) -> float:
+    num:float;
     while True:
         try:
-            return float(input(mensaje))
+            num = float(input(mensaje));
+            
+            if(min is None and max is None):
+                return num;
+            
+            if(min is None):
+                if(num <= max):
+                    return num;
+                print(f"\n\tERROR: El numero debe ser menor o igual a {max}\n");
+                continue;
+            
+            if(max is None):
+                if(num >= min):
+                    return num;
+                borrar_pantalla();
+                print(f"\n\tERROR: El numero debe ser mayor o igual a {min}\n");
+                continue;
+            
+            if(num >= min and num <= max):
+                return num;
+            print(f"\n\tERROR: El numero debe estar entre {min} y {max}")
         except ValueError:
             print("Entrada no válida. Por favor, ingrese solo números.")
+            
+def valInt(mensaje:str, min:int = None, max:int = None)-> int:
+    num:int;
+    while(True):
+        try:
+            num = int(input(mensaje));
+            
+            if(min is None and max is None):
+                return num;
+            
+            if(min is None):
+                if(num <= max):
+                    return num;
+                print(f"\n\tERROR: El numero debe ser menor o igual a {max}\n");
+                continue;
+            
+            if(max is None):
+                if(num >= min):
+                    return num;
+                borrar_pantalla();
+                print(f"\n\tERROR: El numero debe ser mayor o igual a {min}\n");
+                continue;
+            
+            if(num >= min and num <= max):
+                return num;
+            print(f"\n\tERROR: El numero debe estar entre {min} y {max}")
+        except Exception:
+            print("\n\tERROR: solo puedes entrar letras.\n");
+                
+                
 
-def CantidadVali(Valor:int)->bool:
+def cantidadVali(Valor:int)->bool:
     if Valor == 0:
         print("\nEste valor no puede ser 0")
         Esperar_tecla()
@@ -32,7 +83,7 @@ def CantidadVali(Valor:int)->bool:
 
     
     
-def CONTINUAR(num: float) -> bool:
+def continuar(num: float) -> bool:
     while True:
         print(f"\nEl resultado es: {num}")
         print("¿Deseas continuar con otra operación?\n")
@@ -53,7 +104,7 @@ def CONTINUAR(num: float) -> bool:
             borrar_pantalla()
             Esperar_tecla()
             
-def CONTINUAR_CHICHARONERA() ->bool:
+def continuar_chicharonera() ->bool:
      while True:
         print("\n¿Deseas continuar con otra operación?\n")
     
